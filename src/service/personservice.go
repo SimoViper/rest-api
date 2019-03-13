@@ -32,6 +32,8 @@ func CreatePerson(body io.ReadCloser, params map[string]string) structs.Person {
 	var person structs.Person
 	_ = json.NewDecoder(body).Decode(&person)
 	person.ID = params["id"]
+
+
 	people = append(people, person)
 
 	return person
